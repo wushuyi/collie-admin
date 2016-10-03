@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue Demo</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="/static/libs/jquery/2.2.4/jquery.js"></script>
+    <script src="/static/libs/lodash/4.15.0/lodash.js"></script>
+    <script src="/static/libs/vue/1.0.26/vue.js"></script>
+    <script src="/static/libs/vuex/0.8.2/vuex.js"></script>
+    <script src="/static/libs/vue-router/0.7.13/vue-router.js"></script>
+    <script src="/static/libs/fastclick/1.0.6/fastclick.js"></script>
+    <link rel="stylesheet" href="/static/libs/font-awesome/4.6.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/libs/ionicons/2.0.1/css/ionicons.css">
+    <link rel="stylesheet" href="/static/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/libs/twitter-bootstrap/3.3.6/css/bootstrap-theme.css">
+    <script src="/static/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/libs/admin-lte/2.3.6/css/AdminLTE.css">
+    <link rel="stylesheet" href="/static/libs/admin-lte/2.3.6/css/AdminLTE.css">
+    <link rel="stylesheet" href="/static/libs/admin-lte/2.3.6/css/skins/skin-blue.css">
+    <script src="/static/libs/admin-lte/2.3.6/js/app.js"></script>
+    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+    <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+    {% } %}
+</head>
+<body>
+<div style="display: none">
+    <div class="col-md-6 col-md-push-8"></div>
+</div>
+<div id="app"></div>
+
+{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+<script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+{% } %}
+</body>
+</html>
